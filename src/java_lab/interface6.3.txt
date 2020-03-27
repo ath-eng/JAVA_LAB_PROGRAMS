@@ -1,0 +1,71 @@
+import java.util.*;
+
+interface Test
+
+{
+
+    void square();
+
+}
+
+class Arithmetic implements Test
+
+{
+
+    int a;
+
+    public void square()
+
+    {
+
+        System.out.println("Inside Arithmetic class");
+
+        Scanner sc=new Scanner(System.in);
+
+        System.out.println("Enter any number");
+
+        a=sc.nextInt();
+
+        int s=(a*a);
+
+        System.out.println("Square of the number a " +a +" is " +s);
+
+    }
+
+}
+
+public class ToTestInt extends Arithmetic
+
+{
+
+    public void square()
+
+    {
+
+        System.out.println("Inside ToTestInt class");
+
+        Scanner s=new Scanner(System.in);
+
+        super.square();
+
+        System.out.println("enter the side of square");
+
+        int x=s.nextInt();
+
+        int area=(x*x);
+
+        System.out.println("area of square is "+area);
+
+    }
+
+    public static void main(String a[])
+
+    {
+
+        ToTestInt t= new ToTestInt();
+
+        t.square();
+
+    }
+
+}
