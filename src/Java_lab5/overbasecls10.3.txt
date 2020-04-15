@@ -1,0 +1,32 @@
+import java.io.*;
+class Parent
+{
+  void msg()throws ArithmeticException
+  {
+     System.out.println("parent");
+     int a=10,b=0;
+     int c=a/b;
+  }
+}
+
+public class TestExceptionChild extends Parent
+{
+  void msg()
+  {
+    int arr[]=new int[4];
+    System.out.println("child");
+    arr[4]=4;
+ 
+   }
+   public static void main(String args[]){
+   Parent p=new TestExceptionChild();
+   try
+   {
+   p.msg();
+   }
+   catch(ArrayIndexOutOfBoundsException e)
+   {
+     System.out.println("ArrayIndexOutOfBounds Exception Caught");
+   }
+  }
+}

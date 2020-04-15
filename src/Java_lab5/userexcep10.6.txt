@@ -1,0 +1,42 @@
+import java.util.*;
+//import java.lang;
+class MyException extends Exception
+{
+     int a;
+    MyException(int b)
+    {
+        a=b;
+    }
+   // public string toString()
+    //{
+    //    return "My Exception["+a"]";
+    //}
+}
+public class Exceptiondemo
+{
+    static void Compute(int b)throws  MyException
+    {
+        System.out.println("called compute("+b+")");
+        if(b>10)
+        throw new MyException(b);
+        System.out.println("Normal exit");
+    }
+    public static void main(String args[])
+    {
+        //int b,c;
+        //Scanner s=new Scanner(Sytem.in);
+        
+        //System.out.println("enter 2 numbers");
+        //b=s.nextInt();
+        //c=s.nextInt();
+        try
+        {
+            Compute(1);
+            Compute(80);
+        }catch ( MyException e )
+    
+    {
+        System.out.println("exception");
+    }
+    }
+}

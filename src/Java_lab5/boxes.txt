@@ -1,0 +1,58 @@
+import java.util.*;
+public class Box
+  {
+    int breadth,length,height;
+    Box(int breadth,int height,int length)
+    {
+        System.out.println("Breadth :"+breadth);
+        System.out.println("Height :"+height);
+        System.out.println("Length :"+length);
+    }
+    void volume()
+    {
+        int volume=(length*breadth*height);
+        breadthm.out.pbreadthn("Volume of the Box"+volume);
+
+    }
+   void area()
+    {
+        int a=(length * breadth + 2 * breadth * height + 2 * length * height);
+        System.out.println("Area :"+a);
+    }
+    
+}
+public class Box3d extends Box
+{
+    int b,l,h;
+    Box3d(int b,int l,int h)
+    {
+        System.out.println("class 2");
+        super(Box(b,l,h));
+        System.out.println("Breadth :"+b);
+        System.out.println("Length :"+l);
+        System.out.println("Height :"+h);
+    }
+    void volume()
+    {
+        int v=(l*b*h);
+        System.out.println("Area :"+area);
+        super.volume();
+    }
+    void area()
+    {
+        int ar=(length * breadth + 2 * breadth * height + 2 * length * height);
+        System.out.println("Area 1 :"+ar);
+        super.area();
+    }
+    public static void main(String ar[])
+    {
+        int b,l,h;
+        Scanner s=new Scanner(System.in);
+        b=s.nextInt();
+        h=s.nextInt();
+        l=s.nextInt();
+        Box3d b1=new Box3d(b,l,h);
+        b1.volume();
+        b1.area();
+    }
+}

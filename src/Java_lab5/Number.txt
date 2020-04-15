@@ -1,0 +1,187 @@
+public class Number {
+    private double a;
+    Number()
+    {
+        a=300.5d;
+        System.out.println("Inside the Number()");
+        System.out.println("value of a = "+a);
+    }
+    boolean isZero()
+    {
+        System.out.println("a is ZERO ?");
+        if(a==0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+        
+    }
+    boolean isPositive()
+    {
+        System.out.println("a is POSITIVE NUMBER ?");
+        if(a>=0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    boolean isNegative()
+    {
+        System.out.println("a is NEGATIVE NUMBER ?");
+        if(a<0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    boolean isOdd()
+    {
+        System.out.println("a is an ODD number?");
+        if(a%2!=0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    boolean isEven()
+    {
+        System.out.println("a is an EVEN number ?");
+        if(a%2==0)
+                {
+                    return true;
+                }
+        else
+        {
+            return false;
+        }
+    }
+    boolean isPrime()
+    {
+        int p=0;
+        System.out.println("a is a PRIME number?");
+        int i;
+        for(i=1;i<=a;i++)
+        {
+           if(a%i==0)
+           {
+                p++;
+           }
+        }
+        if(p==2)
+        {
+            return true;
+        } 
+        else
+        {
+            return false;
+        }
+        
+    }
+    boolean isArmstrong()
+    {
+       int r=0,s=0;
+       double t=a;
+       while(t!=0)
+       {
+            t=t%10;
+            s=s+r*r*r;
+            t=t/10;
+       }
+       System.out.println("a is a Armstrong");
+       if(s==a)
+       {
+           return true;
+       }
+       else
+       {
+           return false;
+       }
+       
+    }
+    void getFactorial()
+    {
+        int i=0;
+        double fact=0;
+        System.out.println("Factorial");
+        for(i=0;i<a;i++)
+        {
+            fact=fact*i;
+        } 
+        System.out.println("factorial : "+fact);
+       // fact;
+    }
+       
+    void getSqr()
+    {
+        System.out.println("square");
+        double d;
+        d=a*a;
+       // return d;
+       System.out.println("Square :"+d);
+    }
+    void sumDigits()
+    {
+        double m;
+        double sum=0;
+        System.out.println("sum of digits");
+        while(a>0)
+        {
+            m=a%10;
+            sum= sum+m;
+            a=a/10;
+        }
+        //return sum;
+        System.out.println("Sum of digits :"+sum);
+    }
+    void getReverse()
+    {
+        double rev=0;
+        double t=a;
+        while (a>0)
+        {
+            rev=rev*10;
+            rev=t%10;
+            t=t/10;
+        }
+       System.out.println("Reverse :"+rev);
+    }
+    void dispBinary()
+    {
+        
+    }
+    void listFactor()
+    {
+        
+    }
+    public static void main(String a[])
+    {
+        Number N=new Number();
+         System.out.println(N.isZero());
+         System.out.println(N.isNegative());
+         System.out.println(N.isPositive());
+         System.out.println(N.isOdd());
+         System.out.println(N.isEven());
+         System.out.println(N.isPrime());
+         System.out.println(N.isArmstrong());
+         N.getFactorial();
+         N.getReverse();
+         N.sumDigits();
+         N.getSqr();
+        
+        
+        
+    }
+    
+}

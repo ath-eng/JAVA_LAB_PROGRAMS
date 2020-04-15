@@ -1,0 +1,42 @@
+class Five implements Runnable
+{
+    public void run()
+    {
+        for(int i=1;i<=10;i++)
+        {
+            System.out.println(i + "* 5 = "+(i*5));
+        }
+    }
+}
+public class Six implements Runnable
+{
+    public void run()
+    {
+        for(int i=1;i<=10;i++)
+        {
+            System.out.println(i + "* 6 = "+(i*7));
+        }
+    }
+    public static void main(String ar[])
+    {
+        Five f=new Five();
+        Thread t1= new Thread(f);
+        Six s= new Six();
+        Thread t2= new Thread(s);
+        t1.start();
+        t2.start();
+        try
+        {
+            if(t1.Alive());
+            t1.join();
+            if(t2.Alive())
+            t2.join();
+        }
+        catch(InterruptedException e)
+        {
+            System.out.println("***");
+        }
+        
+        
+    }
+}
